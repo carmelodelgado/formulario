@@ -1,88 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Entrenamiento</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Entrenamiento</title>
 </head>
 <body>
 
-<h2>Registro de Entrenamiento</h2>
-
 <form action="http://ordenadordelprofesor/imw/recibe_formulario.php" method="POST" enctype="multipart/form-data">
-    <table>
-        <tr>
-            <td colspan="2" align="center"><strong>Datos Personales</strong></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="dni">DNI(*)</label></td>
-            <td><input type="text" id="dni" name="dni" maxlength="9" required></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="nombre_apellidos">Nombre y Apellidos(*)</label></td>
-            <td><input type="text" id="nombre_apellidos" name="nombre_apellidos" maxlength="100" required></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="contrasena">Contraseña(*)</label></td>
-            <td><input type="password" id="contrasena" name="contrasena" minlength="5" maxlength="10" required></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="telefono">Teléfono</label></td>
-            <td><input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}"></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="email">Email(*)</label></td>
-            <td><input type="email" id="email" name="email" required pattern="^[a-zA-Z0-9_.+-]+@gmail\.com$"></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="fecha_entrenamiento">Fecha del Entrenamiento(*)</label></td>
-            <td><input type="date" id="fecha_entrenamiento" name="fecha_entrenamiento" max="2023-12-31" required></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="imagenes">Imágenes del Entrenamiento</label></td>
-            <td><input type="file" id="imagenes" name="imagenes[]" accept="image/jpeg" multiple></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="rutina_ejercicios">Rutina de Ejercicios</label></td>
-            <td><input type="file" id="rutina_ejercicios" name="rutina_ejercicios" accept=".pdf"></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="agua_consumida">Cantidad de Agua Consumida</label></td>
-            <td><input type="number" id="agua_consumida" name="agua_consumida" value="0.5" step="0.1"></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="nivel_esfuerzo">Valoración del Nivel de Esfuerzo(*)</label></td>
-            <td><input type="range" id="nivel_esfuerzo" name="nivel_esfuerzo" min="1" max="10" required></td>
-        </tr>
-        <tr>
-            <td align="right"><label for="tipo_entrenamiento">Tipo de Entrenamiento(*)</label></td>
-            <td>
-                <select id="tipo_entrenamiento" name="tipo_entrenamiento" required>
-                    <option value="aerobico">Aeróbico</option>
-                    <option value="anaerobico">Anaeróbico</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td align="right"><label for="salas_utilizadas">Salas Utilizadas(*)</label></td>
-            <td>
-                <select id="salas_utilizadas" name="salas_utilizadas[]" multiple required>
-                    <option value="pista_exterior">Pista Exterior</option>
-                    <option value="piscina">Piscina</option>
-                    <option value="sala_musculacion">Sala de Musculación</option>
-                    <option value="sala_spinning">Sala de Spinning</option>
-                    <option value="sala_polivalente">Sala Polivalente</option>
-                    <option value="zona_cardio">Zona Cardio</option>
-                </select>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="2" align="center">
-                <button type="reset">Eliminar Valores</button>
-                <button type="submit">Enviar Formulario</button>
-            </td>
-        </tr>
-    </table>
+  <table border="1">
+    <tr>
+      <th colspan="2">Formulario de Entrenamiento</th>
+    </tr>
+    <tr>
+      <td align="right"><label for="dni">DNI (*):</label></td>
+      <td><input type="text" id="dni" name="dni" maxlength="9" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="nombre_apellidos">Nombre y Apellidos (*):</label></td>
+      <td><input type="text" id="nombre_apellidos" name="nombre_apellidos" maxlength="100" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="contrasena">Contraseña (*):</label></td>
+      <td><input type="password" id="contrasena" name="contrasena" minlength="5" maxlength="10" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="telefono">Teléfono:</label></td>
+      <td><input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="Ej. 928-XX-XX-XX"></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="email">Email (*):</label></td>
+      <td><input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@gmail.com" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="fecha_entrenamiento">Fecha del Entrenamiento (*):</label></td>
+      <td><input type="date" id="fecha_entrenamiento" name="fecha_entrenamiento" max="2023-12-31" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="imagenes_entrenamiento">Imágenes del Entrenamiento:</label></td>
+      <td><input type="file" id="imagenes_entrenamiento" name="imagenes_entrenamiento[]" accept=".jpg" multiple></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="rutina_ejercicios">Rutina de Ejercicios:</label></td>
+      <td><input type="file" id="rutina_ejercicios" name="rutina_ejercicios" accept=".pdf"></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="cantidad_agua">Cantidad de Agua Consumida:</label></td>
+      <td><input type="number" id="cantidad_agua" name="cantidad_agua" value="0.5" step="0.1"></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="nivel_esfuerzo">Valoración del Nivel de Esfuerzo (*):</label></td>
+      <td><input type="range" id="nivel_esfuerzo" name="nivel_esfuerzo" min="1" max="10" required></td>
+    </tr>
+    <tr>
+      <td align="right"><label for="tipo_entrenamiento">Tipo de Entrenamiento (*):</label></td>
+      <td>
+        <select id="tipo_entrenamiento" name="tipo_entrenamiento" required>
+          <option value="aerobico">Aeróbico</option>
+          <option value="anaerobico">Anaeróbico</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><label for="salas_utilizadas">Salas Utilizadas (*):</label></td>
+      <td>
+        <input type="checkbox" id="pista_exterior" name="salas_utilizadas[]" value="Pista exterior">
+        <label for="pista_exterior">Pista exterior</label><br>
+        
+        <input type="checkbox" id="piscina" name="salas_utilizadas[]" value="Piscina">
+        <label for="piscina">Piscina</label><br>
+        
+        <input type="checkbox" id="sala_musculacion" name="salas_utilizadas[]" value="Sala de musculación">
+        <label for="sala_musculacion">Sala de musculación</label><br>
+        
+        <input type="checkbox" id="sala_spinning" name="salas_utilizadas[]" value="Sala de spinning">
+        <label for="sala_spinning">Sala de spinning</label><br>
+        
+        <input type="checkbox" id="sala_polivalente" name="salas_utilizadas[]" value="Sala polivalente">
+        <label for="sala_polivalente">Sala polivalente</label><br>
+        
+        <input type="checkbox" id="zona_cardio" name="salas_utilizadas[]" value="Zona cardio">
+        <label for="zona_cardio">Zona cardio</label><br>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+        <button type="reset">Eliminar Valores</button>
+        <button type="submit">Enviar Formulario</button>
+      </td>
+    </tr>
+  </table>
+  <input type="hidden" name="nombre_apellidos_oculto" value="Tu Nombre y Apellidos">
 </form>
 
 </body>
