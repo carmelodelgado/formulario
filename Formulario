@@ -9,49 +9,61 @@
 
 <form action="http://ordenadordelprofesor/imw/recibe_formulario.php" method="POST" enctype="multipart/form-data">
   <table border="1">
+
     <tr>
       <th colspan="2">Formulario de Entrenamiento</th>
     </tr>
+
     <tr>
       <td align="right"><label for="dni">DNI (*):</label></td>
       <td><input type="text" id="dni" name="dni" maxlength="9" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="nombre_apellidos">Nombre y Apellidos (*):</label></td>
       <td><input type="text" id="nombre_apellidos" name="nombre_apellidos" maxlength="100" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="contrasena">Contraseña (*):</label></td>
       <td><input type="password" id="contrasena" name="contrasena" minlength="5" maxlength="10" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="telefono">Teléfono:</label></td>
       <td><input type="tel" id="telefono" name="telefono" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}" placeholder="Ej. 928-XX-XX-XX"></td>
     </tr>
+
     <tr>
       <td align="right"><label for="email">Email (*):</label></td>
       <td><input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@gmail.com" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="fecha_entrenamiento">Fecha del Entrenamiento (*):</label></td>
       <td><input type="date" id="fecha_entrenamiento" name="fecha_entrenamiento" max="2023-12-31" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="imagenes_entrenamiento">Imágenes del Entrenamiento:</label></td>
       <td><input type="file" id="imagenes_entrenamiento" name="imagenes_entrenamiento[]" accept=".jpg" multiple></td>
     </tr>
+
     <tr>
       <td align="right"><label for="rutina_ejercicios">Rutina de Ejercicios:</label></td>
       <td><input type="file" id="rutina_ejercicios" name="rutina_ejercicios" accept=".pdf"></td>
     </tr>
+
     <tr>
       <td align="right"><label for="cantidad_agua">Cantidad de Agua Consumida:</label></td>
       <td><input type="number" id="cantidad_agua" name="cantidad_agua" value="0.5" step="0.1"></td>
     </tr>
+
     <tr>
       <td align="right"><label for="nivel_esfuerzo">Valoración del Nivel de Esfuerzo (*):</label></td>
       <td><input type="range" id="nivel_esfuerzo" name="nivel_esfuerzo" min="1" max="10" required></td>
     </tr>
+
     <tr>
       <td align="right"><label for="tipo_entrenamiento">Tipo de Entrenamiento (*):</label></td>
       <td>
@@ -61,6 +73,7 @@
         </select>
       </td>
     </tr>
+
     <tr>
       <td align="right"><label for="salas_utilizadas">Salas Utilizadas (*):</label></td>
       <td>
@@ -83,6 +96,7 @@
         <label for="zona_cardio">Zona cardio</label><br>
       </td>
     </tr>
+
     <tr>
       <td colspan="2" align="center">
         <button type="reset">Eliminar Valores</button>
@@ -90,6 +104,7 @@
       </td>
     </tr>
   </table>
+  
   <input type="hidden" name="nombre_apellidos_oculto" value="Tu Nombre y Apellidos">
 </form>
 </body>
